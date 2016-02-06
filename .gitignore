@@ -1,0 +1,9 @@
+.vs/
+Library/
+Assets/UnityVS/
+Temp/
+Assets/RelationsInspector/
+UnityVS.DialogExample.CSharp.Editor.csproj
+UnityVS.DialogExample.CSharp.csproj
+UnityVS.DialogExample.sln
+Assets/UnityVS.meta
