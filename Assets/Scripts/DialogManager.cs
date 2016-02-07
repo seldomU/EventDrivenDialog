@@ -12,34 +12,44 @@ public class DialogManager : MonoBehaviour
 	// turn off by default
 	void Awake()
 	{
-		ShowDialog( false );
+		HideDialog();
 	}
 
 	// turn on/off
-	public void ShowDialog( bool doShow )
+	public void HideDialog()
 	{
-		panel.SetActive( doShow );
+		panel.SetActive( false );
 	}
 
-	public void PopulateDialog( DialogItem item )
+	public void ShowDialog( DialogItem item )
 	{
-		ShowDialog( true );
+		if ( item == null || string.IsNullOrEmpty( item.text ) )
+			throw new System.ArgumentException( "item" );
+
+		panel.SetActive( true );
 
 		question.text = item.text;
 
 		for ( int i = 0; i < replyButtons.Length; i++ )
 		{
 			var button = replyButtons[ i ];
+
+			// show only as many buttons as we have replies
 			bool show = i < item.replies.Count;
 			button.gameObject.SetActive( show );
 			if ( show )
 			{
 				var reply = item.replies[ i ];
 				button.onClick = reply.effect;
-				button.onClick.AddListener( () => ShowDialog( false ) );
-				if ( reply.target != null )
-					button.onClick.AddListener( () => PopulateDialog( reply.target ) );
+				
+				// hide dialog when button is pressed
+				button.onClick.AddListener( () => HideDialog() );
 
+				// show target dialog when button is pressed
+				if ( reply.nextDialog != null )
+					button.onClick.AddListener( () => ShowDialog( reply.nextDialog ) );
+
+				// set the label text
 				button.GetComponentInChildren<Text>().text = reply.text;
 			}
 		}

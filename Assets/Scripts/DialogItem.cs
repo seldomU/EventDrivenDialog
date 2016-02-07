@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
-using SelectionEvent = UnityEngine.UI.Button.ButtonClickedEvent;
+using UnityEngine.UI;
 
 public class DialogItem : MonoBehaviour
 {
@@ -13,6 +13,6 @@ public class DialogItem : MonoBehaviour
 public class DialogReply
 {
 	public string text;
-	public DialogItem target;
-	public SelectionEvent effect;
+	public DialogItem nextDialog;
+	public Button.ButtonClickedEvent effect;
 }

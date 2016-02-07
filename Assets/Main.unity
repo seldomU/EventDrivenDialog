@@ -375,14 +375,14 @@ MonoBehaviour:
   text: How are your cooking skills?
   replies:
   - text: Yes
-    target: {fileID: 1228792343}
+    nextDialog: {fileID: 1228792343}
     effect:
       m_PersistentCalls:
         m_Calls: []
       m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
   - text: No
-    target: {fileID: 1080249385}
+    nextDialog: {fileID: 1080249385}
     effect:
       m_PersistentCalls:
         m_Calls: []
@@ -618,14 +618,14 @@ MonoBehaviour:
   text: Set background color.
   replies:
   - text: As it is.
-    target: {fileID: 0}
+    nextDialog: {fileID: 0}
     effect:
       m_PersistentCalls:
         m_Calls: []
       m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
   - text: Grey.
-    target: {fileID: 0}
+    nextDialog: {fileID: 0}
     effect:
       m_PersistentCalls:
         m_Calls:
@@ -644,7 +644,7 @@ MonoBehaviour:
       m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
   - text: Blue.
-    target: {fileID: 0}
+    nextDialog: {fileID: 0}
     effect:
       m_PersistentCalls:
         m_Calls:
@@ -704,14 +704,14 @@ MonoBehaviour:
   text: Are you hungry?
   replies:
   - text: Yes
-    target: {fileID: 1186794647}
+    nextDialog: {fileID: 1186794647}
     effect:
       m_PersistentCalls:
         m_Calls: []
       m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
   - text: No
-    target: {fileID: 1230165076}
+    nextDialog: {fileID: 1230165076}
     effect:
       m_PersistentCalls:
         m_Calls: []
@@ -816,14 +816,14 @@ MonoBehaviour:
   text: Do you have a ski mask?
   replies:
   - text: Yes
-    target: {fileID: 2106218558}
+    nextDialog: {fileID: 2106218558}
     effect:
       m_PersistentCalls:
         m_Calls: []
       m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
   - text: No
-    target: {fileID: 484770095}
+    nextDialog: {fileID: 484770095}
     effect:
       m_PersistentCalls:
         m_Calls: []
@@ -914,14 +914,14 @@ MonoBehaviour:
   text: Is there any food nearby?
   replies:
   - text: Yes
-    target: {fileID: 368772054}
+    nextDialog: {fileID: 368772054}
     effect:
       m_PersistentCalls:
         m_Calls: []
       m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
   - text: No
-    target: {fileID: 1322553023}
+    nextDialog: {fileID: 1322553023}
     effect:
       m_PersistentCalls:
         m_Calls: []
@@ -1041,14 +1041,14 @@ MonoBehaviour:
   text: Not even a little?
   replies:
   - text: well, actually...
-    target: {fileID: 956571994}
+    nextDialog: {fileID: 956571994}
     effect:
       m_PersistentCalls:
         m_Calls: []
       m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
   - text: yep, I'm positve
-    target: {fileID: 439821757}
+    nextDialog: {fileID: 439821757}
     effect:
       m_PersistentCalls:
         m_Calls: []
@@ -1164,14 +1164,14 @@ MonoBehaviour:
   text: Do you have money?
   replies:
   - text: Yes
-    target: {fileID: 1982777397}
+    nextDialog: {fileID: 1982777397}
     effect:
       m_PersistentCalls:
         m_Calls: []
       m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
   - text: No
-    target: {fileID: 998670655}
+    nextDialog: {fileID: 998670655}
     effect:
       m_PersistentCalls:
         m_Calls: []

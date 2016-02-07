@@ -1,4 +1,3 @@
-/*
 using RelationsInspector;
 using RelationsInspector.Backend;
 using System.Collections.Generic;
@@ -15,10 +14,10 @@ public class DialogBackend : MinimalBackend<DialogItem, string>
 
 		foreach ( var reply in entity.replies )
 		{
-			if ( reply.target == null )
+			if ( reply.nextDialog == null )
 				continue;
 
-			yield return new Relation<DialogItem, string>( entity, reply.target, reply.text );
+			yield return new Relation<DialogItem, string>( entity, reply.nextDialog, reply.text );
 		}
 	}
 	
@@ -41,7 +40,7 @@ public class DialogBackend : MinimalBackend<DialogItem, string>
 		var reply = container.AddComponent<DialogItem>();
 
 		// link the two
-		entity.replies.Add( new DialogReply() { target = reply } );
+		entity.replies.Add( new DialogReply() { nextDialog = reply } );
 
 		// also link them in the hierarchy, just for orientation
 		container.transform.parent = entity.gameObject.transform;
@@ -66,7 +65,7 @@ public class DialogBackend : MinimalBackend<DialogItem, string>
 	void RemoveRelation( Relation<DialogItem, string> relation )
 	{
 		var reply = relation.Source.replies
-			.Where( r => r.target == relation.Target && r.text == relation.Tag )
+			.Where( r => r.nextDialog == relation.Target && r.text == relation.Tag )
 			.FirstOrDefault();
 
 		if ( reply != null )
@@ -78,9 +77,9 @@ public class DialogBackend : MinimalBackend<DialogItem, string>
 	// to be implemented by subclass
 	public override void CreateRelation( DialogItem source, DialogItem target )
 	{
-		var reply = new DialogReply() { text = string.Empty, target = target };
+		var reply = new DialogReply() { text = string.Empty, nextDialog = target };
 		source.replies.Add( reply );
-		api.AddRelation( source, reply.target, reply.text );
+		api.AddRelation( source, reply.nextDialog, reply.text );
 	}
 
 	public override string GetEntityTooltip( DialogItem entity )
@@ -88,4 +87,4 @@ public class DialogBackend : MinimalBackend<DialogItem, string>
 		return entity.text;
 	}
 }
-*/
+
