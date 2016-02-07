@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class DialogTester : MonoBehaviour
 {
 	public DialogManager dialogMgr;
 	public DialogItem bgColorDialog;
