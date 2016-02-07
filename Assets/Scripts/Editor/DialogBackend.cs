@@ -86,5 +86,22 @@ public class DialogBackend : MinimalBackend<DialogItem, string>
 	{
 		return entity.text;
 	}
+
+	public override Rect DrawContent( DialogItem entity, EntityDrawContext drawContext )
+	{
+		var content = new GUIContent( entity.text, null, entity.text );
+		return DrawUtil.DrawContent( content, drawContext );
+	}
+
+	public override Color GetRelationColor( string relationTagValue )
+	{
+		if ( relationTagValue == "Yes" )
+			return Color.green;
+
+		if ( relationTagValue == "No" )
+			return Color.red;
+
+		return Color.white;
+	}
 }
 
